@@ -38,7 +38,11 @@ class VideoProcessor:
             return thermal(frame)
         elif self.current_function == "glitch":
             return glitch(frame)
+        elif self.current_function == "gigachad":
+            return apply_gigachad_jaw_warp(frame)
+
         return frame
+
 
     def process_frame(self):
         while self.is_running:

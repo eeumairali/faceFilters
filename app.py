@@ -22,20 +22,22 @@ class App:
 
         # Filter buttons
         buttons = [
-            ("Grayscale", "grayscale"),
-            ("Bitwise NOT", "bitwise_not"),
-            ("Sepia", "sepia"),
-            ("Cartoon", "cartoon"),
-            ("Pencil Sketch", "sketch"),
-            ("Blur", "blur"),
-            ("Negative", "negative"),
-            ("Emboss", "emboss"),
-            ("Edge Detect", "edges"),
-            ("Stylize", "stylize"),
-            ("Detail Enhance", "enhance"),
-            ("Thermal Cam", "thermal"),
-            ("Glitch", "glitch"),
-        ]
+        ("Grayscale", "grayscale"),
+        ("Bitwise NOT", "bitwise_not"),
+        ("Sepia", "sepia"),
+        ("Cartoon", "cartoon"),
+        ("Pencil Sketch", "sketch"),
+        ("Blur", "blur"),
+        ("Negative", "negative"),
+        ("Emboss", "emboss"),
+        ("Edge Detect", "edges"),
+        ("Stylize", "stylize"),
+        ("Detail Enhance", "enhance"),
+        ("Thermal Cam", "thermal"),
+        ("Glitch", "glitch"),
+        ("GigaChad", "gigachad"),  # 👈 Add this line
+    ]
+
 
         for text, filter_name in buttons:
             Button(sidebar, text=text, command=lambda name=filter_name: self.set_filter(name)).pack(pady=2, side='left', padx=2)
