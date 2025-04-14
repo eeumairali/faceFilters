@@ -18,7 +18,7 @@ class App:
         sidebar = tk.Frame(root)
         sidebar.pack(side="left", fill="y", padx=10, pady=10)
 
-        Label(sidebar, text="Andy Filters").pack(pady=5)
+        Label(sidebar, text="Andy Filters",background='yellow').pack(pady=5)
 
         # Filter buttons
         buttons = [
@@ -35,7 +35,6 @@ class App:
         ("Detail Enhance", "enhance"),
         ("Thermal Cam", "thermal"),
         ("Glitch", "glitch"),
-        ("GigaChad", "gigachad"),  # 👈 Add this line
     ]
 
 

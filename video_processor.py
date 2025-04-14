@@ -1,6 +1,6 @@
 import cv2
 import threading
-from filters import *
+import filters 
 
 
 class VideoProcessor:
@@ -12,34 +12,32 @@ class VideoProcessor:
 
     def apply_filter(self, frame):
         if self.current_function == "grayscale":
-            return grayscale(frame)
+            return filters.grayscale(frame)
         elif self.current_function == "bitwise_not":
-            gray = grayscale(frame)
-            return bitwise_not(gray)
+            gray = filters.grayscale(frame)
+            return filters.bitwise_not(gray)
         elif self.current_function == "sepia":
-            return sepia(frame)
+            return filters.sepia(frame)
         elif self.current_function == "cartoon":
-            return make_cartoon(frame)
+            return filters.make_cartoon(frame)
         elif self.current_function == "sketch":
-            return sketch(frame)
+            return filters.sketch(frame)
         elif self.current_function == "blur":
-            return blur(frame)
+            return filters.blur(frame)
         elif self.current_function == "negative":
-            return negative(frame)
+            return filters.negative(frame)
         elif self.current_function == "emboss":
-            return emboss(frame)
+            return filters.emboss(frame)
         elif self.current_function == "edges":
-            return edges(frame)
+            return filters.edges(frame)
         elif self.current_function == "stylize":
-            return stylize(frame)
+            return filters.stylize(frame)
         elif self.current_function == "enhance":
-            return enhance(frame)
+            return filters.enhance(frame)
         elif self.current_function == "thermal":
-            return thermal(frame)
+            return filters.thermal(frame)
         elif self.current_function == "glitch":
-            return glitch(frame)
-        elif self.current_function == "gigachad":
-            return apply_gigachad_jaw_warp(frame)
+            return filters.glitch(frame)
 
         return frame
 
