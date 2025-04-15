@@ -1,6 +1,6 @@
 import cv2
 import threading
-import filters 
+from . import filters 
 
 
 class VideoProcessor:

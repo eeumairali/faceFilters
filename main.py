@@ -1,6 +1,6 @@
 from tkinter import Tk
-from video_processor import VideoProcessor
-from app import App
+from app_parts.video_processor import VideoProcessor
+from app_parts.app import App
 
 
 def main():
