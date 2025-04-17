@@ -13,7 +13,7 @@ class App:
         self.root.configure(bg='#f0f0f0')  # Light gray background
 
         # Set window size and position
-        window_width = 900
+        window_width = 1200
         window_height = 600
         screen_width = root.winfo_screenwidth()
         screen_height = root.winfo_screenheight()
@@ -34,7 +34,7 @@ class App:
         self.video_label.pack(fill="both", expand=True, padx=5, pady=5)
 
         # Create the sidebar
-        sidebar = Frame(main_frame, bg='#e0e0e0', width=200)
+        sidebar = Frame(main_frame, bg='#e0e0e0', width=400)
         sidebar.pack(side="left", fill="y", padx=10, pady=10)
 
         # App title
