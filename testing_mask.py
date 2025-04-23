@@ -4,7 +4,7 @@ import numpy as np
 from PIL import Image
 
 # Load mask
-mask_img = Image.open(r'C:\Users\eeuma\Desktop\students_clients_data\andy\faceFilters\thanos.png').convert("RGBA")
+mask_img = Image.open(r'C:\Users\eeuma\Desktop\students_clients_data\andy\faceFilters\thanos2.png').convert("RGBA")
 
 # MediaPipe setup
 mp_face_mesh = mp.solutions.face_mesh
@@ -32,8 +32,9 @@ while cap.isOpened():
         # Get face bounding box
         xs = [lm.x * w for lm in landmarks]
         ys = [lm.y * h-80 for lm in landmarks]
-        x_min, x_max = int(min(xs))-70, int(max(xs))+70
-        y_min, y_max = int(min(ys))-70, int(max(ys))+70
+        wid  = 90
+        x_min, x_max = int(min(xs))-wid, int(max(xs))+wid
+        y_min, y_max = int(min(ys))-wid, int(max(ys))+wid
 
         # Ensure bounding box is within image bounds
         x_min = max(0, x_min)
