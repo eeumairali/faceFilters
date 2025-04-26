@@ -42,6 +42,9 @@ class VideoProcessor:
             return filters.thermal(frame)
         elif self.current_function == "glitch":
             return filters.glitch(frame)
+        elif self.current_function == "warp":
+            # if key pressed s then apply warp effect
+            return filters.warp(frame)
             
         # MediaPipe-based filters
         elif self.current_function == "face_mesh":

@@ -68,6 +68,7 @@ class App:
             ("Negative", "negative"),
             ("Sepia", "sepia"),
             ("Blur", "blur"),
+            ("WARP", "warp"),
         ])
         
         self.create_filter_section(scrollable_frame, "Artistic", [

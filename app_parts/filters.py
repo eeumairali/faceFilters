@@ -31,9 +31,47 @@ pose = mp_pose.Pose(
     min_tracking_confidence=0.5
 )
 
+
+def time_warp_scan(frame):
+    rows, cols, _ = frame.shape
+    alternate_frame = np.zeros((rows,cols,3))
+    
+    for i in range(rows):
+
+        alternate_frame[i, :] = frame[i, :]
+        for j in range(i):
+            frame[j, :] = alternate_frame[j, :]                 
+        
+        cv2.line(frame, (0, i-1), (cols, i-1), (212, 184, 0), 2)
+
+        cv2.imshow('cam', frame)
+        if cv2.waitKey(1) & 0xFF == ord('e'):
+            break
+    cv2.imshow('cam', frame)
+    cv2.waitKey()
+    return alternate_frame # in case we want to save or process the final img later, return it to main
+
+
 # Original filters
 def grayscale(frame):
     return cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+
+# Time Warp Filter
+def time_warp(frame, buffer, index):
+    rows, cols, _ = frame.shape
+
+    if buffer is None:
+        buffer = np.zeros((rows, cols, 3), dtype=np.uint8)
+
+    if index < rows:
+        buffer[index, :] = frame[index, :]
+        for j in range(index):
+            frame[j, :] = buffer[j, :]
+        cv2.line(frame, (0, index), (cols, index), (212, 184, 0), 2)
+
+    return frame, buffer, index + 1
+
+
 
 
 def bitwise_not(frame):
