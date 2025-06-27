@@ -103,3 +103,5 @@ class VideoProcessor:
 
     def get_frame(self):
         return self.frame
+    
+print('hello')
